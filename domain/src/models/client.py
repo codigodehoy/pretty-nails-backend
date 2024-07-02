@@ -7,3 +7,4 @@ class Client(NamedTuple):
     last_name: str
     email: str
     movil_number: str
+    role: str
