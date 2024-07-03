@@ -3,7 +3,8 @@ create-env:
 	&& . .venv/bin/activate
 
 install-dependencies:
-	pip3 install -r requirements.txt
+	. .venv/bin/activate \
+	&& pip3 install -r requirements.txt
 
 start:
 	. .venv/bin/activate \
