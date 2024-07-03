@@ -1,0 +1,10 @@
+name: Pretty Nails CI Backend
+
+on: 
+  pull-request:
+    branches:
+      - master
+
+jobs:
+  run-tests:
+      uses: ./.github/workflows/reusable_ci.yaml
