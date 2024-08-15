@@ -2,6 +2,7 @@ from typing import NamedTuple
 
 from .category import Category
 
+
 class Product(NamedTuple):
     id: str
     category: Category
