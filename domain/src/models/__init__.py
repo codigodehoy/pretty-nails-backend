@@ -1,4 +1,4 @@
 from .category import Category
-from .client import Client
+from .user import User
 from .product import Product
 from .reserve import Reserve
