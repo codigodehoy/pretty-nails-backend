@@ -1,7 +1,7 @@
 from typing import NamedTuple
 
 
-class Client(NamedTuple):
+class User(NamedTuple):
     id: str
     first_name: str
     last_name: str
