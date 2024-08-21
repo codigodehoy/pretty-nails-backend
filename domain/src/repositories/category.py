@@ -12,3 +12,7 @@ class CategoryRepository(ABC):
     @abstractmethod
     def get_category_by_id(self, category_id: str) -> Optional[Category]:
         raise NotImplemented
+    
+    @abstractmethod
+    def get_category_by_name(self, category_name: str) -> Optional[Category]:
+        raise NotImplemented
