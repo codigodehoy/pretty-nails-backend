@@ -1,6 +1,6 @@
 from domain.src.models import Category
 from domain.src.repositories import CategoryRepository
-from domain.src.exeptions import CategoryAlreadyExistsException
+from domain.src.exeptions import CategoryNameAlreadyExistsException
 
 
 class CreateCategory:
@@ -9,9 +9,10 @@ class CreateCategory:
         self.repository_category = repository_category
     
     def main(self, request: Category):
-        category = self.repository_category.get_category_by_id(request.id)
+        category = self.repository_category.get_category_by_name(request.category_name)
 
-        if category and request.category_name == category.category_name:
-            raise CategoryAlreadyExistsException(entity_type=Category.__name__, entity_name=request.category_name)
+        if category:
+            raise CategoryNameAlreadyExistsException(category_name=request.category_name)
 
-        return self.repository_category.create_category(request)
+        response = self.repository_category.create_category(request)
+        return response

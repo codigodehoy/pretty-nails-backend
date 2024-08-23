@@ -1,1 +1,1 @@
-from .category import CategoryAlreadyExistsException
+from .category import CategoryNameAlreadyExistsException

@@ -13,10 +13,13 @@ class MemoryCategoryRepository(CategoryRepository):
         self.categories.append(item)
         return category
 
-    def get_category_by_id(self, category_id: str) -> Optional[Category]:
-        id = f"CATEGORY#{category_id}"
+    def get_category_by_name(self, category_name: str) -> Optional[Category]:
         for category in self.categories:
-            if category.get("PK") == id:
-                return Category(id=category_id, category_name=category.get("category_name"))
+            if category.get("category_name") == category_name:
+                category_id = category.get("PK")
+                return Category(id=category_id, category_name=category_name)
         
         return None
+
+    def get_category_by_id(self, category_id: str) -> Optional[Category]:
+        raise NotImplemented
